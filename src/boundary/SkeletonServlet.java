@@ -16,7 +16,7 @@ import objectlayer.User;
 /**
  * Servlet implementation class MLGServlet
  */
-@WebServlet("/SkeletonFit")
+@WebServlet("/SkeletonServlet")
 public class SkeletonServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	SkeletonImpl test = new SkeletonImpl();
@@ -48,8 +48,8 @@ public class SkeletonServlet extends HttpServlet {
 			
 			test.create(testUserRegister);
 			PrintWriter out = response.getWriter();
-			out.println("<!DOCTYPE html> <html > <head> <meta charset='UTF-8'> <title>MLG Sign up page</title>      <link rel='stylesheet' href='css/home.css'> </head><body> <div id='login'>   <h1>Welcome to MLG Recruitment Website!</h1> <form action='MLGServlet' method='post'>  <div class='field-wrap'><label>User Name<span class='req'>*</span> </label> <input type ='text' name='userName' required autocomplete='off'/>          </div>                   <div class='field-wrap'>            <label>              Password<span class='req'>*</span>            </label>            <input type ='password' name='pass' required autocomplete='off'/>         </div>                   <p class='forgot'><a href='#'>Forgot Password?</a></p>                  <button name='login' class='button button-block'/>Log In</button>                    </form>        </div>              </div><!-- tab-content -->     </div> <!-- /form -->	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>  	<script src='WEB-INF/lib/jquery.min.js'></script><script src='js/home.js' type ='text/javascript'></script></body></html>");
-
+			out.println("<!DOCTYPE html> <html > <head> <meta charset='UTF-8'> <title>MLG Sign up page</title>      <link rel='stylesheet' href='css/home.css'> </head><body> <div id='login'>   <h1>Welcome to MLG Recruitment Website!</h1> <form action='SkeletonServlet' method='post'>  <div class='field-wrap'><label>User Name<span class='req'>*</span> </label> <input type ='text' name='userName' required autocomplete='off'/>          </div>                   <div class='field-wrap'>            <label>              Password<span class='req'>*</span>            </label>            <input type ='password' name='pass' required autocomplete='off'/>         </div>                   <p class='forgot'><a href='#'>Forgot Password?</a></p>                  <button name='login' class='button button-block'/>Log In</button>                    </form>        </div>              </div><!-- tab-content -->     </div> <!-- /form -->	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>  	<script src='WEB-INF/lib/jquery.min.js'></script><script src='js/home.js' type ='text/javascript'></script></body></html>");
+			System.out.println("inside register");
 		}
 		else if(request.getParameter("login")!=null){
 			System.out.println("In Login");
