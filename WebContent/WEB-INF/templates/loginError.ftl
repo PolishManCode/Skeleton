@@ -15,11 +15,38 @@
   <div class="form">
       
       <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
+        <li class="tab"><a href="#signup">Sign Up</a></li>
+        <li class="tab active"><a href="#login">Log In</a></li>
       </ul>
       
       <div class="tab-content">
+              <div id="login">   
+          <h1>Welcome to Skeleton</h1>
+          <h3> Invalid password and/or user name. Please try again</h3>
+          
+          <form action="SkeletonServlet" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              User Name<span class="req">*</span>
+            </label>
+            <input type ="text" name="userName" required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type ="password" name="pass" required autocomplete="off"/>
+          </div>
+          
+          
+          <button name="login" class="button button-block"/>Log In</button>
+          
+          </form>
+
+        </div>
+      
         <div id="signup">   
           <h1>Sign Up for the </br>Skeleton</h1>
           
@@ -63,39 +90,12 @@
             <input type ="password" name="pass" required autocomplete="off"/>
           </div>
           
-          
           <button type="submit" name="register" class="button button-block"/>Get Started</button>
           
           </form>
 
         </div>
-        
-        <div id="login">   
-          <h1>Welcome to Skeleton!</h1>
-          
-          <form action="SkeletonServlet" method="post">
-          
-            <div class="field-wrap">
-            <label>
-              User Name<span class="req">*</span>
-            </label>
-            <input type ="text" name="userName" required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type ="password" name="pass" required autocomplete="off"/>
-          </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button name="login" class="button button-block"/>Log In</button>
-          
-          </form>
-
-        </div>
+       
         
       </div>
       
