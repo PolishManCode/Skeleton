@@ -29,7 +29,7 @@ public void createUser(String fname, String lname, String userName, String passw
 		stmt.setString(2, lname);
 		stmt.setString(3, userName);
 		stmt.setString(4, password);
-		stmt.setString(6, email);
+		stmt.setString(5, email);
 		
 	} catch (SQLException e) {
 	}

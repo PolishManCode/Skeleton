@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Recruit Gaming</title>
+    <title>Skeleton</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/recruit-gaming.css" rel="stylesheet">
@@ -33,41 +33,34 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="MLGServlet?param=home" class="navbar-left"><img src='pictures/logo.png'
+                <a href="SkeletonServlet?param=home" class="navbar-left"><img src='pictures/logo.png'
 			alt='Recruit Gaming Home' style='width: 100px; height: 54px;'></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                 	<li>
-                        <a href="MLGServlet?param=home" class="navbar-left"><img src='pictures/logo.png'
+                        <a href="SkeletonServlet?param=home" class="navbar-left"><img src='pictures/logo.png'
 			alt='Recruit Gaming Home' style='width: 172px; height: 92px;'></a>
                     </li>
                     <li>
-                        <a href="MLGServlet?param=home">Home</a>
+                        <a href="SkeletonServlet?param=home">Home</a>
                     </li>
                     <li>
-                        <a href="MLGServlet?param=games">Games</a>
+                        <a href="SkeletonServlet?param=games">Games</a>
                     </li>
                     <li>
-                        <li><a href="MLGServlet?param=recruitment">Recruitment</a></li>
+                        <li><a href="SkeletonServlet?param=recruitment">Recruitment</a></li>
                     </li>
-                    <#if guest>
-                    <li>
-                        <li><a href="MLGServlet?param=profile">Profile</a></li>
-                    </li>
-                    </#if>
-                    <#if guest>
-                    <li class="right">
-                        <li><a href=MLGServlet?param=logOutIn class ="logIn">LogOut</a></li>
-                    </li>
-                    </#if>
                     
-                    <#if guest = false>
-                    <li class="right">
-                        <li><a href=MLGServlet?param=logOutIn class ="logIn">LogIn</a></li>
+                    <li>
+                        <li><a href="SkeletonServlet?param=profile">Profile</a></li>
                     </li>
-                    </#if>
+                    
+                    <li class="right">
+                        <li><a href=SkeletonServlet?param=logOutIn class ="logIn">LogOut</a></li>
+                    </li>
+                    
                     
                 </ul>
             </div>
@@ -130,21 +123,7 @@
             </div>
         </div>
    
-        <#assign i = 1>
-        <#list topList as topRow>
-            <div class="row">
-                <div class="box">
-                    <div class="col-sm-12">
-                        <h2>#${i} by ${topRow.playerName} (${topRow.voteCount} votes)</h2>
-                        <div class="embed-responsive embed-responsive-16by9" >
-                        <iframe class="embed-responsive-item"  src="${topRow.link}"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        <#assign i++>
-        </#list>
-                  
+                       
 
 
 

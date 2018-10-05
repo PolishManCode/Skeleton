@@ -33,41 +33,31 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="MLGServlet?param=home" class="navbar-left"><img src='pictures/logo.png'
+                <a href="SkeletonServlet?param=home" class="navbar-left"><img src='pictures/logo.png'
 			alt='Recruit Gaming Home' style='width: 100px; height: 54px;'></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                 	<li>
-                        <a href="MLGServlet?param=home" class="navbar-left"><img src='pictures/logo.png'
+                        <a href="SkeletonServlet?param=home" class="navbar-left"><img src='pictures/logo.png'
 			alt='Recruit Gaming Home' style='width: 172px; height: 92px;'></a>
                     </li>
                     <li>
-                        <a href="MLGServlet?param=home">Home</a>
+                        <a href="SkeletonServlet?param=home">Home</a>
                     </li>
                     <li>
-                        <a href="MLGServlet?param=games">Games</a>
+                        <a href="SkeletonServlet?param=games">Games</a>
                     </li>
                     <li>
-                        <li><a href="MLGServlet?param=recruitment">Recruitment</a></li>
+                        <li><a href="SkeletonServlet?param=recruitment">Recruitment</a></li>
                     </li>
-                    <#if guest>
                     <li>
-                        <li><a href="MLGServlet?param=profile">Profile</a></li>
+                        <li><a href="SkeletonServlet?param=profile">Profile</a></li>
                     </li>
-                    </#if>
-                    <#if guest>
                     <li class="right">
-                        <li><a href=MLGServlet?param=logOutIn class ="logIn">LogOut</a></li>
+                        <li><a href=SkeletonServlet?param=logOutIn class ="logIn">LogOut</a></li>
                     </li>
-                    </#if>
-                    
-                    <#if guest = false>
-                    <li class="right">
-                        <li><a href=MLGServlet?param=logOutIn class ="logIn">LogIn</a></li>
-                    </li>
-                    </#if>
                     
                 </ul>
             </div>
@@ -80,103 +70,7 @@
 
         <div class="row">
             <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">The Recruits 
-                        <strong>Page</strong>
-                    </h2>
-                    <hr>
-                </div>
-                <div class="col-lg-12 text-center">
-                    <img class="img-responsive img-border img-full" src="img/dota.png" alt="">
-                    <h2>Dota 2
-                        <br>
-                        <small>Current Recruits</small>
-                    </h2>
-                    
-                <table class="table">
-                    <thead>
-                        <tr>
-                        <th>User name</th>
-                        <th>Name</th>
-                        <th>Contact information</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <#list list1 as listItem>
-                            <tr>
-                                <td>${listItem.userName}</td>
-                                <td>${listItem.fname} ${listItem.lname}</td>
-                                <td>${listItem.email}</td>
-                                <td><a href="mailto:${listItem.email}" class="btn btn-default btn-lg">Send email</a></td>
-                            </tr>
-                        </#list>
-                    </tbody>
-                </table>
 
-                    <hr>
-                </div>
-                <div class="col-lg-12 text-center">
-                    <img class="img-responsive img-border img-full" src="img/csgo.png" alt="">
-                    <h2>Counter Strike
-                        <br>
-                        <small>Current Recruits</small>
-                    </h2>
-                <table class="table">
-                    <thead>
-                        <tr>
-                        <th>User name</th>
-                        <th>Name</th>
-                        <th>Contact information</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <#list list2 as listItem>
-                            <tr>
-                                <td>${listItem.userName}</td>
-                                <td>${listItem.fname} ${listItem.lname}</td>
-                                <td>${listItem.email}</td>
-                                <td><a href="mailto:${listItem.email}" class="btn btn-default btn-lg">Send email</a></td>
-                            </tr>
-                        </#list>
-                    </tbody>
-                </table>
-                    <hr>
-                </div>
-                <div class="col-lg-12 text-center">
-                    <img class="img-responsive img-border img-full" src="img/slide-3.jpg" alt="">
-                    <h2>League Of Legends
-                        <br>
-                        <small>Current Recruits</small>
-                    </h2>
-                                    <table class="table">
-                    <thead>
-                        <tr>
-                        <th>User name</th>
-                        <th>Name</th>
-                        <th>Contact information</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <#list list3 as listItem>
-                            <tr>
-                                <td>${listItem.userName}</td>
-                                <td>${listItem.fname} ${listItem.lname}</td>
-                                <td>${listItem.email}</td>
-                                <td><a href="mailto:${listItem.email}" class="btn btn-default btn-lg">Send email</a></td>
-                            </tr>
-                        </#list>
-                    </tbody>
-                </table>
-                    <hr>
-                <div class="col-lg-12 text-center">
-                    <ul class="pager">
-                        <li class="previous"><a href="#">&larr; Older</a>
-                        </li>
-                        <li class="next"><a href="#">Newer &rarr;</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
 

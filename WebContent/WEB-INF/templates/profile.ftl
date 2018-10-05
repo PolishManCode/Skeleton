@@ -33,41 +33,32 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="MLGServlet?param=home" class="navbar-left"><img src='pictures/logo.png'
+                <a href="SkeletonServlet?param=home" class="navbar-left"><img src='pictures/logo.png'
 			alt='Recruit Gaming Home' style='width: 100px; height: 54px;'></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                 	<li>
-                        <a href="MLGServlet?param=home" class="navbar-left"><img src='pictures/logo.png'
+                        <a href="SkeletonServlet?param=home" class="navbar-left"><img src='pictures/logo.png'
 			alt='Recruit Gaming Home' style='width: 172px; height: 92px;'></a>
                     </li>
                     <li>
-                        <a href="MLGServlet?param=home">Home</a>
+                        <a href="SkeletonServlet?param=home">Home</a>
                     </li>
                     <li>
-                        <a href="MLGServlet?param=games">Games</a>
+                        <a href="SkeletonServlet?param=games">Games</a>
                     </li>
                     <li>
-                        <li><a href="MLGServlet?param=recruitment">Recruitment</a></li>
+                        <li><a href="SkeletonServlet?param=recruitment">Recruitment</a></li>
                     </li>
-                    <#if guest>
                     <li>
-                        <li><a href="MLGServlet?param=profile">Profile</a></li>
+                        <li><a href="SkeletonServlet?param=profile">Profile</a></li>
                     </li>
-                    </#if>
-                    <#if guest>
                     <li class="right">
-                        <li><a href=MLGServlet?param=logOutIn class ="logIn">LogOut</a></li>
+                        <li><a href=SkeletonServlet?param=logOutIn class ="logIn">LogOut</a></li>
                     </li>
-                    </#if>
-                    
-                    <#if guest = false>
-                    <li class="right">
-                        <li><a href=MLGServlet?param=logOutIn class ="logIn">LogIn</a></li>
-                    </li>
-                    </#if>
+
                     
                 </ul>
             </div>
@@ -101,10 +92,6 @@
                         <strong>Profile</strong>
                     </h2>
                     <hr>
-                </div>
-                <div class="col-md-8">
-					<img class="img-responsive" src="${profilePicName}" alt="">
-                </div>
                 <div class="col-md-4">
                     <p>Name:
                         <strong> ${fName}</strong>
@@ -115,24 +102,13 @@
                     <p>User Name:
                         <strong>${user}</strong>
                     </p>
-                    <p>Game:
-                        <strong>${game}</strong>
-                    </p>
                     <p>Password:
                         <strong>${password}</strong>
                     </p>
                     <p>Email:
                         <strong>${email}</strong>
                     </p>
-                    <a href="#" class="btn btn-default btn-lg" onclick="openDialog()">Change Profile Picture</a>
-                    <span style="display:none" id="labelFileSelected"></span>
-
-                    <form role="form" action="MLGServlet?param=changeProfilePic" method="post">
-                        <input type="hidden" value="${userId}" name="user_id" />
-                        <input type="hidden" value="" name="profilePicName" id="input_ProfilePicName"/>
-                        <button type="submit" class="btn btn-default" name="pButton" style="display:none">Confirm</button>
-                    </form>
-
+                
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -161,7 +137,7 @@
                     </h2>
                     <hr>
                     <p>Change your information.</p>
-                    <form role="form" action="MLGServlet?param=editInfo" method="post">
+                    <form role="form" action="SkeletonServlet?param=editInfo" method="post">
                     <input type="hidden" value="${userId}" name="user_id" />
                         <div class="row">
                             <div class="form-group col-lg-4">
@@ -177,24 +153,7 @@
                                 <input type="text" class="form-control" name="UName">
                             </div>
                             <div class="clearfix"></div>
-                            <div class="form-group col-lg-4">
-                                <label>Game</label>
-                                <select name="game" class="form-control">
-    								<option class="gameOption" value="Dota 2">Dota 2</option>
-    								<option class="gameOption" value="World of Warcraft">World of Warcraft</option>
-   									<option class="gameOption" value="CSGO">Counter Strike: Global Offensive</option>
-    								<option class="gameOption" value="League of Legends">League of Legends</option>
-    								<option class="gameOption" value="Smite">Smite</option>
-    								<option class="gameOption" value="Halo5">Halo 5</option>
-    								<option class="gameOption" value="Call of Duty, Black Ops3">Call of Duty: Black Ops 3</option>
-    								<option class="gameOption" value="Hearthstone, Heroes of Warcraft">Hearthstone Heroes of Warcraft</option>
-    								<option class="gameOption" value="Starcraft II">Starcraft II</option>
-    								<option class="gameOption" value="Heroes of the Storm">Heroes of the Storm</option>
-    								<option class="gameOption" value="Call of Duty, Advanced Warfare">Call of Duty: Advanced Warfare</option>
-    								<option class="gameOption" value="Overwatch">Overwatch</option>
-    								<option class="gameOption" value="Gears of War 4">Gears of War 4</option>
-  								</select>
-                            </div>
+                            
                             <div class="form-group col-lg-4">
                                 <label>Password</label>
                                 <input type="text" class="form-control" name="Password" onchange="onPassChange()">

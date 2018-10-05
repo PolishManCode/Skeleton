@@ -34,7 +34,6 @@ public class SkeletonServlet extends HttpServlet {
 	private TemplateProcessor tmplProce;
 	
 	private User userToken = new User();
-	private boolean guestCheck = true;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -67,6 +66,7 @@ public class SkeletonServlet extends HttpServlet {
 			userRegister.setLname(request.getParameter("lname"));
 			userRegister.setUserName(request.getParameter("userName"));
 			userRegister.setPassword(request.getParameter("pass"));
+			userRegister.setEmail(request.getParameter("email"));
 			
 			dataBase.create(userRegister);
 			goToLogin(request, response);
@@ -74,7 +74,7 @@ public class SkeletonServlet extends HttpServlet {
 			//System.out.println("inside register");
 		}
 		else if(request.getParameter("login")!=null){
-			//System.out.println("In Login");
+			System.out.println("In Login");
 			
 			userLogin.setUserName(request.getParameter("userName"));
 			//System.out.println(request.getParameter("userName"));
@@ -90,7 +90,7 @@ public class SkeletonServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			if(check==true){
-				//System.out.println("Login Successful");
+				System.out.println("Login Successful");
 				
 				HttpSession session = request.getSession(true);
 		        if(session!=null)
@@ -99,7 +99,7 @@ public class SkeletonServlet extends HttpServlet {
 				goToHomePage(request, response);
 			}
 			else{
-				//System.out.println("Login Unsuccessful");
+				System.out.println("Login Unsuccessful");
 				
 				goToLoginError(request, response);
 			}
@@ -134,8 +134,6 @@ public class SkeletonServlet extends HttpServlet {
 			SimpleHash root = new SimpleHash(db.build());
 			String templateName = "games.ftl";
 			
-			guestCheck = true;
-			root.put("guest", guestCheck);
 			tmplProce.processTemplate(templateName, root, request, response);
 		}
 		
@@ -144,9 +142,6 @@ public class SkeletonServlet extends HttpServlet {
 			DefaultObjectWrapperBuilder db = new DefaultObjectWrapperBuilder(Configuration.VERSION_2_3_25);
 			SimpleHash root = new SimpleHash(db.build());
 			String templateName = "recruit.ftl";
-			
-			guestCheck = true;
-			root.put("guest", guestCheck);
 			
 			tmplProce.processTemplate(templateName, root, request, response);
 		}
@@ -193,8 +188,6 @@ public class SkeletonServlet extends HttpServlet {
 			root.put("email", email);
 			
 			
-			guestCheck = true;
-			root.put("guest", guestCheck);
 			tmplProce.processTemplate(templateName, root, request, response);
 			
 		}
@@ -250,8 +243,6 @@ public class SkeletonServlet extends HttpServlet {
 			root.put("password", password);
 			root.put("email", email);
 			
-						guestCheck = true;
-			root.put("guest", guestCheck);
 			tmplProce.processTemplate(templateName, root, request, response);
 			
 		}
@@ -269,20 +260,15 @@ public class SkeletonServlet extends HttpServlet {
 	}
 	private void goToHomePage(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		guestCheck = true;
+		System.out.println("Insde gotoHomePage");
 
 		System.out.println("Back to HomePage");
 		DefaultObjectWrapperBuilder db = new DefaultObjectWrapperBuilder(Configuration.VERSION_2_3_25);
 		SimpleHash root = new SimpleHash(db.build());
-		root.put("guest", guestCheck);
 		
-		String templateName = "homepage.ftl";
-		
-		
+		String templateName = "homepage.ftl";		
 		
 		tmplProce.processTemplate(templateName, root, request, response);
-		
-
 		
 	}
 	private void setUserToken(User userToken) {
