@@ -7,22 +7,22 @@ import java.sql.SQLException;
 import objectlayer.User;
 
 public class SkeletonPersist {
-private DBAccessImpl database = new DBAccessImpl();
+private DBAccessImpl dataBase = new DBAccessImpl();
 	
 public void Init()
 {
-	database.Connect();
+	dataBase.Connect();
 }
 
 public void UnInit()
 {
-	database.disconnect();
+	dataBase.disconnect();
 }
 
 public void createUser(String fname, String lname, String userName, String password, String email)
 {
 	
-	PreparedStatement stmt = database.newPrepStm("insert into users(fname, lname, userName, password, email) values(?, ?, ?, ?, ?)");
+	PreparedStatement stmt = dataBase.newPrepStm("insert into users(fname, lname, userName, password, email) values(?, ?, ?, ?, ?)");
 	
 	try {
 		stmt.setString(1, fname);
@@ -34,20 +34,20 @@ public void createUser(String fname, String lname, String userName, String passw
 	} catch (SQLException e) {
 	}
 	
-	database.exeStmUpdate(stmt);
+	dataBase.exeStmUpdate(stmt);
 	
 }
 public boolean checkUser(String userName, String password) throws SQLException{
 	System.out.println("Inside checkUser");
 	System.out.println(userName +" " + password);
-	PreparedStatement stmt = database.newPrepStm("select count(*) from users where userName = ? and password =?");
+	PreparedStatement stmt = dataBase.newPrepStm("select count(*) from users where userName = ? and password =?");
 	try {
 		stmt.setString(1, userName);
 		stmt.setString(2, password);
 		
 	} catch (SQLException e) {
 	}
-	ResultSet rs = database.exeStm(stmt);
+	ResultSet rs = dataBase.exeStm(stmt);
 	int rowcount =0;
 	rs.next();
 	rowcount = rs.getInt(1);
@@ -63,13 +63,13 @@ public User getUserInfo(String userName) throws SQLException{
 	System.out.println("Inside checkUser");
 	System.out.println(userName);
 	User infoUser = new User();
-	PreparedStatement stmt = database.newPrepStm("select * from users where userName = ?");
+	PreparedStatement stmt = dataBase.newPrepStm("select * from users where userName = ?");
 	try {
 		stmt.setString(1, userName);
 		
 	} catch (SQLException e) {
 	}
-	ResultSet rs = database.exeStm(stmt);
+	ResultSet rs = dataBase.exeStm(stmt);
 	int id = 0;
 	String firstName = null, lastName = null, uName = null, password = null, email = null;
 	
@@ -96,7 +96,7 @@ public User getUserInfo(String userName) throws SQLException{
 }
 
 public String getUserNameFromId(int userId) {
-	PreparedStatement stmt = database.newPrepStm("select userName from users where User_ID = ?");
+	PreparedStatement stmt = dataBase.newPrepStm("select userName from users where User_ID = ?");
 
 	try {
 		stmt.setInt(1, userId);
@@ -104,7 +104,7 @@ public String getUserNameFromId(int userId) {
 	} catch (SQLException e) {
 	}
 	
-	ResultSet rs = database.exeStm(stmt);
+	ResultSet rs = dataBase.exeStm(stmt);
 	
 	try {
 		if (rs.next())
@@ -165,22 +165,22 @@ public void changeUserInfo(int userId, String fname, String lName, String uname,
 	
 	str += " WHERE User_ID = " + userId;
 	System.out.println(str);
-	PreparedStatement stmt = database.newPrepStm(str);
+	PreparedStatement stmt = dataBase.newPrepStm(str);
 	
-	database.exeStmUpdate(stmt);
+	dataBase.exeStmUpdate(stmt);
 }
 
 public User getUserInfoFromID(int userID) throws SQLException {
 	System.out.println("Inside checkUser");
 	System.out.println("User ID: " + userID);
 	User infoUser = new User();
-	PreparedStatement stmt = database.newPrepStm("select * from users where User_ID = ?");
+	PreparedStatement stmt = dataBase.newPrepStm("select * from users where User_ID = ?");
 	try {
 		stmt.setLong(1, userID);
 		
 	} catch (SQLException e) {
 	}
-	ResultSet rs = database.exeStm(stmt);
+	ResultSet rs = dataBase.exeStm(stmt);
 	int id = 0;
 	String firstName = null, lastName = null, uName = null, password = null, email = null;
 	

@@ -128,20 +128,20 @@ public class SkeletonServlet extends HttpServlet {
 			tmplProce.processTemplate(templateName, root, request, response);
 		
 		}
-		else if(paramater.equals("games")){
-			System.out.println("Inside of Games");
+		else if(paramater.equals("exercises")){
+			System.out.println("Inside of Exercises");
 			DefaultObjectWrapperBuilder db = new DefaultObjectWrapperBuilder(Configuration.VERSION_2_3_25);
 			SimpleHash root = new SimpleHash(db.build());
-			String templateName = "games.ftl";
+			String templateName = "exercises.ftl";
 			
 			tmplProce.processTemplate(templateName, root, request, response);
 		}
 		
-		else if(paramater.equals("recruitment")){
-			System.out.println("Inside of recruit");
+		else if(paramater.equals("schedule")){
+			System.out.println("Inside of schedule");
 			DefaultObjectWrapperBuilder db = new DefaultObjectWrapperBuilder(Configuration.VERSION_2_3_25);
 			SimpleHash root = new SimpleHash(db.build());
-			String templateName = "recruit.ftl";
+			String templateName = "schedule.ftl";
 			
 			tmplProce.processTemplate(templateName, root, request, response);
 		}

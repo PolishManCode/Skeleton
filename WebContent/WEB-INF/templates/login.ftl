@@ -2,7 +2,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>MLG Sign up page</title>
+  <title>SkeletonCode</title>
       <link rel="stylesheet" href="css/login.css">
 
   
@@ -10,7 +10,7 @@
 
 <body>
 <div id = "homelogo">
-      <img src="pictures/logo.png" alt="Recruit Gaming Home" style="width:172px;height:92px;">
+      <img src="pictures/logo.png" alt="Fitness" style="width:172px;height:92px;">
 </div>
   <div class="form">
       
@@ -21,7 +21,7 @@
       
       <div class="tab-content">
               <div id="login">   
-          <h1>Welcome to MLG Recruitment Website!</h1>
+          <h1>Welcome to Skeleton</h1>
           
           <form action="SkeletonServlet" method="post">
           
@@ -39,7 +39,6 @@
             <input type ="password" name="pass" required autocomplete="off"/>
           </div>
           
-          <p class="forgot"><a href="SkeletonServlet?param=noLogIn">Continue without login in?</a></p>
           
           <button name="login" class="button button-block"/>Log In</button>
           
@@ -48,7 +47,7 @@
         </div>
       
         <div id="signup">   
-          <h1>Sign Up for the </br>MLG Recruitment Website</h1>
+          <h1>Sign Up for the </br>Skeleton</h1>
           
           <form action="SkeletonServlet" method="post">
           
